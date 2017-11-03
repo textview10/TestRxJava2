@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.zonkey.mobileteach_lib.view.laserpen.LaserPenView
+        android:id="@+id/lpv_show_pic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+    </com.zonkey.mobileteach_lib.view.laserpen.LaserPenView>
+
+    <RelativeLayout
+        android:id="@+id/rl_cut"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <com.zonkey.mobileteach_lib.view.blackboard.CropOverlayView
+            android:id="@+id/cut_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressConnecting"
+        style="?android:progressBarStyleSmall"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#66000000"
+        android:orientation="horizontal"
+        android:weightSum="14">
+
+        <LinearLayout
+            android:id="@+id/blackboard_bottom_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <ImageView
+                android:id="@+id/img_b_pen"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/b_pen" />
+
+            <RadioGroup
+                android:id="@+id/rg_b_pen"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="#11ffffff"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="3">
+
+                <RadioButton
+                    android:id="@+id/rb_b_pen_min"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_pen_min"
+                    android:button="@null"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/rb_b_pen_middle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_pen_middle"
+                    android:button="@null"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:id="@+id/rb_b_pen_max"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_pen_max"
+                    android:button="@null"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <ImageView
+                android:id="@+id/img_b_flashlight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/b_flashlight" />
+
+            <ImageView
+                android:id="@+id/img_b_laser"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/b_laser" />
+
+            <ImageView
+                android:id="@+id/img_b_eraser"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/b_eraser" />
+
+            <LinearLayout
+                android:id="@+id/rg_b_eraser_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:visibility="gone"
+                android:background="#11ffffff"
+                android:orientation="horizontal"
+                >
+                <RadioGroup
+                    android:id="@+id/rg_b_eraser"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="2"
+                    android:weightSum="2">
+
+                    <RadioButton
+                        android:id="@+id/rb_b_eraser_middle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_eraser_middle"
+                        android:button="@null"
+                        android:checked="false" />
+
+                    <RadioButton
+                        android:id="@+id/rb_b_eraser_max"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_eraser_max"
+                        android:button="@null"
+                        android:checked="false" />
+
+                </RadioGroup>
+                <Button
+                    android:id="@+id/rb_b_eraser_full"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_eraser_full"
+                    android:button="@null"
+                     />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_b_cut"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/b_cut" />
+
+            <ImageButton
+                android:id="@+id/img_b_revoke"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_revoke" />
+
+            <ImageButton
+                android:id="@+id/blackboard_redo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_redo" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6">
+
+            <RelativeLayout
+                android:id="@+id/rl_b_color"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/all_layout"
+                android:layout_weight="1"
+                android:visibility="gone">
+
+                <View
+                    android:id="@+id/view_b_color"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_centerVertical="true"
+                    android:background="@color/red" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@+id/view_b_color"
+                    android:background="@drawable/draw_color_line" />
+
+                <SeekBar
+                    android:id="@+id/sk_b_color"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/view_b_color"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:maxHeight="3dp"
+                    android:minHeight="1dp"
+                    android:progressDrawable="@drawable/sk_drawcontroll_color"
+                    android:thumb="@drawable/sk_drawable_controll_thumb" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/all_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_weight="0"
+                android:background="#11ffffff">
+
+                <LinearLayout
+                    android:id="@+id/save_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="0"
+                    android:background="@drawable/selector_blackboard_save"
+                    android:clickable="true"
+                    android:padding="5dip"
+                    android:visibility="gone">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:padding="5dip"
+                        android:text="保存"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/recorder_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="0">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="录制"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+                    <ImageButton
+                        android:id="@+id/btn_screen_recorder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:background="@drawable/b_play" />
+
+                    <TextView
+                        android:id="@+id/text_recorder_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="00:00"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

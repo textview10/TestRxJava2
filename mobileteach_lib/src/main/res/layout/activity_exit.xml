@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_exit"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/down"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="提示"
+        android:textColor="@color/primary_text"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="8dp"
+        android:background="@color/divider" />
+
+    <TextView
+        android:id="@+id/tv_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="程序即将跳转到登录页面"
+        android:textColor="@color/secondary_text"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btn_sure"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/version_btn"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+</LinearLayout>
